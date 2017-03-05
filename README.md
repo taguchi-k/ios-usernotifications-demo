@@ -177,17 +177,17 @@ NSObject
 
 |プロパティ名|説明|サンプル|
 |---|---|---|
-|delegate | delegateを指定する <br>UNUserNotificationCenterDelegateを利用するため | userNotificationCenter.delegate = self |
+|delegate | delegateを指定する <br>UNUserNotificationCenterDelegateを利用するため | center.delegate = self |
 
 ## 主要メソッド
 
 |メソッド名|説明|サンプル|
 |---|---|---|
 |current() | シングルトンユーザー通知センターオブジェクトを取得する | UNUserNotificationCenter.current() |
-|requestAuthorization(options:completionHandler:) | 通知使用の許可を要求する | userNotificationCenter.requestAuthorization(options: [.badge, .sound, .alert], completionHandler: { (granted, error) in |
-|getNotificationSettings(completionHandler:) | 通知設定を取得する| userNotificationCenter.getNotificationSettings(completionHandler: { (settings) in |
-|add(_:withCompletionHandler:)|ローカル通知を配信するためのスケジュールを追加する|userNotificationCenter.add(request, withCompletionHandler: nil)|
-|removeAllPendingNotificationRequests() | 未配信の通知要求を削除する | userNotificationCenter.removeAllPendingNotificationRequests() |
+|requestAuthorization(options:completionHandler:) | 通知使用の許可を要求する | center.requestAuthorization<br>(options: [.alert],completionHandler: { (granted, error) in |
+|getNotificationSettings(completionHandler:) | 通知設定を取得する| center.getNotificationSettings<br>(completionHandler: { (settings) in |
+|add(_:withCompletionHandler:)|ローカル通知を配信するためのスケジュールを追加する|center.add<br>(request, withCompletionHandler: nil)|
+|removeAllPendingNotificationRequests() | 未配信の通知要求を削除する | center.removeAllPendingNotificationRequests() |
 
 ### UNUserNotificationCenterDelegateプロトコルのメソッド
 
